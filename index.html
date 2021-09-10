@@ -33,7 +33,7 @@
     function users(data) {
       console.log(data);
 
-      var myHeaders = new Headers();
+      /*var myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
       myHeaders.append('Authorization', 'Bearer ' + data);
       myHeaders.append('Access-Control-Allow-Origin', 'https://hackinterest.herokuapp.com/');
@@ -44,9 +44,21 @@
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
-      };
+      };*/
 
-      fetch(urlusers, requestOptions)
+      const optionsTwo = {
+      method: 'GET',
+      headers: {
+        'Content-Type' : 'application/json',
+        'Authorization': "Basic OWVkOGZhZmEtNmYxZC00M2VjLTgxNzctMTZkM2Y1YWQzOTc0Ojc0Yzc2ZmI5LTE4NjYtNGUwOC1hZWIxLTRhMTJmNTAzNTI0NA==",
+        'Access-Control-Allow-Origin' : 'https://hackinterest.herokuapp.com/',
+        'Access-Control-Allow-Credentials' : 'true',
+        'Access-Control-Allow-Methods' : 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers' : 'Origin, Content-Type, Accept'
+      }
+    };
+
+      fetch(urlusers, optionsTwo)
         .then(response => response.text())
         .then(result => console.log(result));
     }
