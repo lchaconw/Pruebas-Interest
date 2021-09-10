@@ -36,6 +36,9 @@
       var myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
       myHeaders.append('Authorization', 'Bearer ' + data);
+      myHeaders.append('Access-Control-Allow-Origin', 'https://hackinterest.herokuapp.com/');
+      myHeaders.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      myHeaders.append('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept');
 
       var requestOptions = {
         method: 'GET',
