@@ -46,7 +46,7 @@
         redirect: 'follow'
       };*/
 
-      const optionsTwo = {
+      /**const optionsTwo = {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -56,11 +56,18 @@
           'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
           'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept'
         }
-      };
+      };*/
 
-      fetch(urlusers, optionsTwo)
+
+      
+
+      fetch(urlusers, { 'Access-Control-Allow-Origin': 'https://hackinterest.herokuapp.com/', 'Access-Control-Allow-Credentials': 'true' }).then(success, failure)
+
+
+      /*fetch(urlusers, optionsTwo)
         .then(response => response.text())
-        .then(result => console.log(result));
+        .then(result => console.log(result));*/
+      console.log('Termino');
     }
   </script>
 </body>
